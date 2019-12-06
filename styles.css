@@ -17,6 +17,7 @@ body {
     align-items: center;
     color: #e7a800;
     font-family: 'IBM Plex Mono', monospace;
+    font-display: swap;
     text-shadow: 0 0 3px #e7a800;
 }
 
