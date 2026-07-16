@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ben Casling // Full-stack Developer</title>
     <link rel="stylesheet" type="text/css" href="./styles.css">
@@ -9,22 +10,90 @@
 </head>
 
 <body>
-    <div class="content">
-        <h1 class="header">
-            <span class="header-component main-header-component">Ben Casling
-                <span class="header-decoration"> //</span>
-            </span>
-            <span class="header-component descriptive-header-component">Full-stack Developer</span>
-        </h1>
-        <br>
+    <nav class="nav">
+        <a href="#hero" id="logo" class="logo">ben.casling</a>
+        <div class="nav-title">~/menu</div>
+        <ul class="nav-links">
+            <li><a href="#hero" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero" class="section page hero active">
+        <div class="boot-lines">
+            <p class="terminal-line">
+                <span class="prompt-user">ben</span><span class="prompt-at">@</span><span class="prompt-host">casling.io</span><span class="prompt-colon">:</span><span class="prompt-path">~</span><span class="prompt-dollar">$</span>
+                <span class="prompt-command" id="typed-command"></span><span class="cursor" id="typing-cursor">&nbsp;</span>
+            </p>
+            <p class="terminal-line terminal-loading" id="loading-line"></p>
+        </div>
+        <pre class="ascii-portrait" id="ascii-portrait"></pre>
+        <p class="terminal-line terminal-output" id="output-line">Ben Casling &mdash; Full-stack Developer</p>
+    </section>
+
+    <section id="about" class="section page">
+        <h2 class="section-title">About</h2>
+        <!-- TODO: replace with real bio -->
+        <p class="prose">Full-stack developer building things for the web. Placeholder bio &mdash; replace with a couple of sentences about background, interests, and what you're currently focused on.</p>
+    </section>
+
+    <section id="experience" class="section page">
+        <h2 class="section-title">Experience</h2>
+        <pre class="tree"><span class="tree-line tree-root">experience/</span></pre>
+    </section>
+
+    <section id="projects" class="section page">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects"></div>
+    </section>
+
+    <section id="contact" class="section page contact">
+        <h2 class="section-title">Contact</h2>
         <div class="links">
             <a class="link" href="https://github.com/bencasling" alt="Github" target="_blank">
-                <i class="fa fa-github fa-4x"></i>
+                <i class="fa fa-github fa-2x"></i>
+                <span class="link-label">github</span>
             </a>
             <a class="link" href="https://uk.linkedin.com/in/ben-casling-21430510a" alt="Linkedin" target="_blank">
-                <i class="fa fa-linkedin fa-4x"></i>
+                <i class="fa fa-linkedin fa-2x"></i>
+                <span class="link-label">linkedin</span>
             </a>
+            <button type="button" class="link" id="email-toggle" aria-expanded="false">
+                <i class="fa fa-envelope fa-2x" id="email-toggle-icon"></i>
+                <span class="link-label" id="email-toggle-label">send an email</span>
+            </button>
         </div>
-    </div>
-    <div class="scanlines"></div>
+
+        <p class="form-status" id="form-status"></p>
+
+        <div class="contact-form-wrap" id="contact-form-wrap">
+            <form class="contact-form" id="contact-form">
+                <input type="hidden" name="access_key" value="69c9985b-86df-43a5-992e-c4522dc18eb0">
+                <input type="checkbox" name="botcheck" class="form-honeypot" tabindex="-1" autocomplete="off">
+
+                <label class="form-field">
+                    <span class="form-label">$ name</span>
+                    <input type="text" name="name" required>
+                </label>
+
+                <label class="form-field">
+                    <span class="form-label">$ email</span>
+                    <input type="email" name="email" required>
+                </label>
+
+                <label class="form-field">
+                    <span class="form-label">$ message</span>
+                    <textarea name="message" rows="5" required></textarea>
+                </label>
+
+                <button type="submit" class="form-submit">Send message</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="subpixel-overlay"></div>
+    <script defer src="./effect.js"></script>
 </body>
