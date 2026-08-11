@@ -1,30 +1,128 @@
+---
+---
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ben Casling // Full-stack Developer</title>
+    <title>Ben Casling // Senior Software Engineer</title>
+    <meta name="description" content="Ben Casling is a senior software engineer based in Scotland's Central Belt, working end-to-end across startups, scale-ups, and enterprises in fintech, logistics, transport, corporate training, and cyber security.">
+    <link rel="canonical" href="https://casling.io/">
+    <meta property="og:title" content="Ben Casling // Senior Software Engineer">
+    <meta property="og:description" content="Senior software engineer based in Scotland's Central Belt, working end-to-end across fintech, logistics, transport, corporate training, and cyber security.">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://casling.io/">
+    <meta name="twitter:card" content="summary">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ben Casling",
+        "jobTitle": {{ site.data.experience.first.role | jsonify }},
+        "url": "https://casling.io/",
+        "worksFor": {
+            "@type": "Organization",
+            "name": {{ site.data.experience.first.org | jsonify }}
+        },
+        "sameAs": [
+            "https://github.com/bencasling",
+            "https://uk.linkedin.com/in/ben-casling-21430510a"
+        ]
+    }
+    </script>
     <link rel="stylesheet" type="text/css" href="./styles.css">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class="content">
-        <h1 class="header">
-            <span class="header-component main-header-component">Ben Casling
-                <span class="header-decoration"> //</span>
-            </span>
-            <span class="header-component descriptive-header-component">Full-stack Developer</span>
-        </h1>
-        <br>
+    <nav class="nav">
+        <a href="#hero" id="logo" class="logo">ben.casling</a>
+        <div class="nav-title">~/menu</div>
+        <ul class="nav-links">
+            <li><a href="#hero" class="nav-link active" aria-current="page">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <!-- <li><a href="#projects" class="nav-link">Projects</a></li> -->
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero" class="section page hero active">
+        <div class="boot-lines">
+            <p class="terminal-line">
+                <span class="prompt-user">ben</span><span class="prompt-at">@</span><span class="prompt-host">casling.io</span><span class="prompt-colon">:</span><span class="prompt-path">~</span><span class="prompt-dollar">$</span>
+                <span class="prompt-command" id="typed-command"></span><span class="cursor" id="typing-cursor">&nbsp;</span>
+            </p>
+            <p class="terminal-line terminal-loading" id="loading-line"></p>
+        </div>
+        <pre class="ascii-portrait" id="ascii-portrait" aria-hidden="true"></pre>
+        <p class="terminal-line terminal-output" id="output-line">Ben Casling &mdash; Senior Software Engineer</p>
+    </section>
+
+    <section id="about" class="section page">
+        <h2 class="section-title">About</h2>
+        <p class="prose">Senior software engineer based in Scotland's Central Belt. I've worked on projects end-to-end from planning to deployment across startups, scale-ups, and enterprises in fintech, logistics, transport, corporate training, and cyber security.</p>
+        <p class="prose">Outside of work: HAM radio (MM0VBC), 3D printing, hobby electronics, home automation, and Formula 1/Formula E.</p>
+    </section>
+
+    <section id="experience" class="section page">
+        <h2 class="section-title">Experience</h2>
+        <pre class="tree"><span class="tree-line tree-root">experience/</span>{% for entry in site.data.experience %}{% assign is_last = forloop.last %}<span class="tree-entry"><span class="tree-line"><span class="tree-glyph">{% if is_last %}└── {% else %}├── {% endif %}</span><button type="button" class="tree-toggle" aria-expanded="true">▾ </button><span class="timeline-org">{{ entry.org | escape }}/</span> <span class="timeline-dates timeline-dates-head">{{ entry.dates | escape }}</span></span><span class="tree-children"><span class="tree-line"><span class="tree-glyph">{% if is_last %}    {% else %}│   {% endif %}├── </span><span class="timeline-role">{{ entry.role | escape }}</span> <span class="timeline-dates">{{ entry.dates | escape }}</span></span><span class="tree-line"><span class="tree-glyph">{% if is_last %}    {% else %}│   {% endif %}├── </span><span class="timeline-desc">{{ entry.desc | escape }}</span></span><span class="tree-line"><span class="tree-glyph">{% if is_last %}    {% else %}│   {% endif %}└── </span><span class="timeline-tags">{% for tag in entry.tags %}<span class="tag">{{ tag | escape }}</span>{% endfor %}</span></span></span></span>{% endfor %}</pre>
+    </section>
+
+    <section id="projects" class="section page">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects">{% for project in site.data.projects %}<div class="project-card"><h3 class="project-name">{{ project.name | escape }}</h3><p class="project-desc">{{ project.desc | escape }}</p><div class="project-tags">{% for tag in project.tags %}<span class="tag">{{ tag | escape }}</span>{% endfor %}</div><a class="project-link" href="{{ project.link }}" target="_blank">View →</a></div>{% endfor %}</div>
+    </section>
+
+    <section id="contact" class="section page contact">
+        <h2 class="section-title">Contact</h2>
         <div class="links">
             <a class="link" href="https://github.com/bencasling" alt="Github" target="_blank">
-                <i class="fa fa-github fa-4x"></i>
+                <i class="fa fa-github fa-2x"></i>
+                <span class="link-label">github</span>
             </a>
             <a class="link" href="https://uk.linkedin.com/in/ben-casling-21430510a" alt="Linkedin" target="_blank">
-                <i class="fa fa-linkedin fa-4x"></i>
+                <i class="fa fa-linkedin fa-2x"></i>
+                <span class="link-label">linkedin</span>
             </a>
+            <button type="button" class="link" id="email-toggle" aria-expanded="false" aria-controls="contact-form-wrap">
+                <i class="fa fa-envelope fa-2x" id="email-toggle-icon"></i>
+                <span class="link-label" id="email-toggle-label">send an email</span>
+            </button>
         </div>
-    </div>
-    <div class="scanlines"></div>
+
+        <p class="form-status" id="form-status"></p>
+
+        <div class="contact-form-wrap" id="contact-form-wrap">
+            <form class="contact-form" id="contact-form">
+                <input type="hidden" name="access_key" value="69c9985b-86df-43a5-992e-c4522dc18eb0">
+                <input type="checkbox" name="botcheck" class="form-honeypot" tabindex="-1" autocomplete="off">
+
+                <label class="form-field">
+                    <span class="form-label">$ name</span>
+                    <input type="text" name="name" required>
+                </label>
+
+                <label class="form-field">
+                    <span class="form-label">$ email</span>
+                    <input type="email" name="email" required>
+                </label>
+
+                <label class="form-field">
+                    <span class="form-label">$ message</span>
+                    <textarea name="message" rows="5" required></textarea>
+                </label>
+
+                <button type="submit" class="form-submit">Send message</button>
+            </form>
+        </div>
+    </section>
+
+    <canvas id="ripple-canvas" class="ripple-canvas"></canvas>
+    <div class="subpixel-overlay"></div>
+    <script defer src="./effect.js"></script>
 </body>
+</html>

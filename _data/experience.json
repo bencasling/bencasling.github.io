@@ -1,0 +1,51 @@
+[
+    {
+        "org": "N-able",
+        "role": "Software Engineer (Patch & Agentic Platform)",
+        "dates": "Jun 2025–Present",
+        "desc": "Edinburgh, Scotland",
+        "tags": ["Python", "GraphQL", "MCP", "Go"]
+    },
+    {
+        "org": "Ember",
+        "role": "Software Engineer",
+        "dates": "May 2024–Jun 2025",
+        "desc": "Edinburgh, UK",
+        "tags": ["React", "Django", "Flutter"]
+    },
+    {
+        "org": "Nationwide",
+        "role": "Software Engineer",
+        "dates": "May 2023–May 2024",
+        "desc": "Remote",
+        "tags": ["C#", ".NET"]
+    },
+    {
+        "org": "Sponge",
+        "role": "Software Engineer",
+        "dates": "Oct 2022–May 2023",
+        "desc": "Edinburgh, Scotland",
+        "tags": ["Full-stack", "SaaS"]
+    },
+    {
+        "org": "People's Postcode Lottery",
+        "role": "Software Engineer",
+        "dates": "Dec 2021–Oct 2022",
+        "desc": "Edinburgh, Scotland",
+        "tags": ["Python", "AWS", "Serverless"]
+    },
+    {
+        "org": "Diet Chef",
+        "role": "Software Engineer",
+        "dates": "Mar 2021–Dec 2021",
+        "desc": "Edinburgh, Scotland",
+        "tags": ["Python", "Django", "Docker", "AWS"]
+    },
+    {
+        "org": "Bolt Learning",
+        "role": "Developer",
+        "dates": "Oct 2017–Mar 2021",
+        "desc": "Edinburgh, Scotland",
+        "tags": ["Python", "JavaScript", "Docker", "Kubernetes"]
+    }
+]
