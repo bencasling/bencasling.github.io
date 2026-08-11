@@ -172,7 +172,7 @@
         const getPageItems = (page) => {
             if (!page) return [];
             if (page.id === 'experience') return Array.from(page.querySelectorAll('.tree-entry'));
-            // if (page.id === 'projects') return Array.from(page.querySelectorAll('.project-card'));
+            if (page.id === 'projects') return Array.from(page.querySelectorAll('.project-card'));
             if (page.id === 'contact') return Array.from(page.querySelectorAll('.link'));
             return [];
         };
