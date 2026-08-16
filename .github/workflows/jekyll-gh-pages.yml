@@ -35,6 +35,10 @@ jobs:
         with:
           source: ./
           destination: ./_site
+      - name: Mirror llms.txt into .well-known
+        run: |
+          mkdir -p ./_site/.well-known
+          cp ./_site/llms.txt ./_site/.well-known/llms.txt
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
