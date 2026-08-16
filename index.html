@@ -44,7 +44,7 @@
             <li><a href="#hero" class="nav-link active" aria-current="page">Home</a></li>
             <li><a href="#about" class="nav-link">About</a></li>
             <li><a href="#experience" class="nav-link">Experience</a></li>
-            <!-- <li><a href="#projects" class="nav-link">Projects</a></li> -->
+            {% if site.data.projects.size > 0 %}<li><a href="#projects" class="nav-link">Projects</a></li>{% endif %}
             <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
     </nav>
@@ -72,10 +72,12 @@
         <pre class="tree"><span class="tree-line tree-root">experience/</span>{% for entry in site.data.experience %}{% assign is_last = forloop.last %}<span class="tree-entry"><span class="tree-line"><span class="tree-glyph">{% if is_last %}└── {% else %}├── {% endif %}</span><button type="button" class="tree-toggle" aria-expanded="true">▾ </button><span class="timeline-org">{{ entry.org | escape }}/</span> <span class="timeline-dates timeline-dates-head">{{ entry.dates | escape }}</span></span><span class="tree-children"><span class="tree-line"><span class="tree-glyph">{% if is_last %}    {% else %}│   {% endif %}├── </span><span class="timeline-role">{{ entry.role | escape }}</span> <span class="timeline-dates">{{ entry.dates | escape }}</span></span><span class="tree-line"><span class="tree-glyph">{% if is_last %}    {% else %}│   {% endif %}├── </span><span class="timeline-desc">{{ entry.desc | escape }}</span></span><span class="tree-line"><span class="tree-glyph">{% if is_last %}    {% else %}│   {% endif %}└── </span><span class="timeline-tags">{% for tag in entry.tags %}<span class="tag">{{ tag | escape }}</span>{% endfor %}</span></span></span></span>{% endfor %}</pre>
     </section>
 
+    {% if site.data.projects.size > 0 %}
     <section id="projects" class="section page">
         <h2 class="section-title">Projects</h2>
         <div class="projects">{% for project in site.data.projects %}<div class="project-card"><h3 class="project-name">{{ project.name | escape }}</h3><p class="project-desc">{{ project.desc | escape }}</p><div class="project-tags">{% for tag in project.tags %}<span class="tag">{{ tag | escape }}</span>{% endfor %}</div><a class="project-link" href="{{ project.link }}" target="_blank">View →</a></div>{% endfor %}</div>
     </section>
+    {% endif %}
 
     <section id="contact" class="section page contact">
         <h2 class="section-title">Contact</h2>
