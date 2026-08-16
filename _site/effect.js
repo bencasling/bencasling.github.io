@@ -172,7 +172,7 @@
         const getPageItems = (page) => {
             if (!page) return [];
             if (page.id === 'experience') return Array.from(page.querySelectorAll('.tree-entry'));
-            if (page.id === 'projects') return Array.from(page.querySelectorAll('.project-card'));
+            // if (page.id === 'projects') return Array.from(page.querySelectorAll('.project-card'));
             if (page.id === 'contact') return Array.from(page.querySelectorAll('.link'));
             return [];
         };
@@ -195,6 +195,7 @@
         const lockTreeWidth = () => {
             const tree = document.querySelector('.tree');
             if (!tree) return;
+            if (window.matchMedia('(max-width: 700px)').matches) return;
             const clone = tree.cloneNode(true);
             clone.classList.add('tree');
             clone.style.position = 'absolute';
@@ -241,6 +242,9 @@
             link.classList.add('active');
             link.setAttribute('aria-current', 'page');
             setTimeout(() => target.classList.remove('glitch'), 250);
+
+            target.scrollTop = 0;
+            window.scrollTo(0, 0);
 
             pageItemIndex[target.id] = 0;
             updateItemSelection(target);
